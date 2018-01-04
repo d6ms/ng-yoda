@@ -50,7 +50,15 @@
 
   <h2>料金</h2>
   <span>お引越し料金は以下のルールでお願いしております</span>
-  <p>積み込み・積み下ろし作業料金 + 移動距離別料金</p>
+  <div fxLayoutWrap class="rule">
+    <div>
+      <span>積み込み・積み下ろし作業料金</span>
+    </div>
+    <div>
+      <mat-icon>add</mat-icon>
+      <span>移動距離別料金</span>
+    </div>
+  </div>
   <div fxLayoutWrap fxLayoutGap="15px">
     <div fxFlex="calc(33% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>積み込み・積み下ろし作業料金</h3>

@@ -1,0 +1,114 @@
+<div class="page individuals">
+
+  <h2>引越しのプロが、県外・県外どこへでもお運びいたします</h2>
+  <div class="domain-chips">
+    <mat-chip-list class="mat-chip-list">
+      <mat-chip selected="true" color="primary">就職</mat-chip>
+      <mat-chip selected="true" color="primary">転勤</mat-chip>
+      <mat-chip selected="true" color="primary">新築</mat-chip>
+      <mat-chip selected="true" color="primary">住み替え</mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <h2>お引越しプラン</h2>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">filter_1</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>節約コース</h3>
+      <div>
+        家具家電等の大きいもののみを赤帽車で運送いたします。 ダンボールなどの小さなお荷物は、お客様自身に移動していただくことで費用を抑えます。
+        また、大きな家具の運び出し作業などをお客様ご自身にも手伝っていただければ、 作業時間が短く済むため、さらに低価格でのサービス提供をすることができます。
+      </div>
+    </div>
+  </div>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">filter_2</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>標準コース</h3>
+      <div>
+        荷物の大小にかかわらず、お荷物を全て赤帽車で運送いたします。
+        お客様には、引越し当日までに家具・家電や小物類の梱包を行っていただき、 引越し完了後はご自身で開梱作業を行っていただくことになります。
+      </div>
+    </div>
+  </div>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">filter_3</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>おまかせコース</h3>
+      <div>
+        梱包・移送・開梱・設置の全ての作業を当社で請け負います。
+        他のプランよりも料金はかかりますが、お引越しの時間に余裕のない方には当プランをおすすめしています。
+      </div>
+    </div>
+  </div>
+
+  <h2>料金</h2>
+  <span>お引越し料金は以下のルールでお願いしております</span>
+  <p>積み込み・積み下ろし作業料金 + 移動距離別料金</p>
+  <div fxLayoutWrap fxLayoutGap="15px">
+    <div fxFlex="calc(33% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>積み込み・積み下ろし作業料金</h3>
+      <mat-table #table [dataSource]="timeFeeData">
+        <ng-container matColumnDef="作業時間">
+          <mat-header-cell *matHeaderCellDef>作業時間</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.time}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="料金">
+          <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="timeFeeColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: timeFeeColumns;"></mat-row>
+      </mat-table>
+    </div>
+    <div fxFlex="calc(33% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>移動距離別料金(県内)</h3>
+      <mat-table #table [dataSource]="distanceIntFeeData">
+        <ng-container matColumnDef="移動距離">
+          <mat-header-cell *matHeaderCellDef>移動距離</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.distance}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="料金">
+          <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="distanceIntFeeColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: distanceIntFeeColumns;"></mat-row>
+      </mat-table>
+    </div>
+    <div fxFlex="calc(33% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>移動距離別料金(県外)</h3>
+      <mat-table #table [dataSource]="distanceExtFeeData">
+        <ng-container matColumnDef="移動距離">
+          <mat-header-cell *matHeaderCellDef>移動距離</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.distance}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="料金">
+          <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="distanceExtFeeColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: distanceExtFeeColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <span class="disclaimer">※1 日祭日は上記料金に加えて割増料金を頂く場合があります</span>
+  <span class="disclaimer">※2 上記の料金に加えて有料道路等の利用料金を別途頂戴します</span>
+
+  <h2>訪問見積もりサービス</h2>
+  <p>
+    赤帽依田運送では、お宅に訪問してのお見積を無料で行っております。<br>
+    お客様のご都合に合わせて、早朝や深夜でのお見積も可能です。
+  </p>
+  <p>
+    ※ お急ぎの方や単身でのお引越しの場合は、お電話でのお見積も可能です<br>
+    ※ 荷物量の多くなるご家族でのお引越しをご検討のお客様には訪問でのお見積をおすすめしています
+  </p>
+
+</div>

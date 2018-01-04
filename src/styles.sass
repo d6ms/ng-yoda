@@ -1,0 +1,25 @@
+@import '~@angular/material/theming'
+@include mat-core()
+
+$primary: mat-palette($mat-deep-orange,900)
+$accent: mat-palette($mat-teal,400)
+$theme: mat-light-theme($primary, $accent)
+
+@include angular-material-theme($theme)
+
+
+body
+  margin: 0 auto
+  padding: 0
+  font-family: HelveticaNeue
+
+.container
+  margin: 0 auto
+  @media(min-width: 768px)
+    width: 85%
+  @media(max-width: 767px)
+    width: 95%
+
+.page
+  padding: 15px 0px 15px 0px
+

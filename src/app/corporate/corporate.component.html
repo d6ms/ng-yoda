@@ -1,0 +1,146 @@
+<div class="page corporate">
+
+  <h2>信頼と実績の安心・安全輸送</h2>
+  <div class="domain-chips">
+    <mat-chip-list class="mat-chip-list">
+      <mat-chip selected="true" color="primary">大型車配送</mat-chip>
+      <mat-chip selected="true" color="primary">緊急便</mat-chip>
+      <mat-chip selected="true" color="primary">チルド便</mat-chip>
+      <mat-chip selected="true" color="primary">定期便</mat-chip>
+      <mat-chip selected="true" color="primary">輸出便</mat-chip>
+    </mat-chip-list>
+  </div>
+  <p>
+    必要な時に必要な台数をご用命いただけます。<br>
+    即日配送、夜間配送、深夜配送、時間指定配送など、即時対応いたします。
+  </p>
+
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">local_shipping</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>4t、大型車配送</h3>
+      <p>
+        通常の赤帽車では対応できないお荷物を輸送する場合でも、当社では対応が可能です。<br>
+        全国の協力会社と提携することにより、4t車や大型車をチャーターして対応させていただきます。
+      </p>
+    </div>
+  </div>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">report_problem</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>緊急便</h3>
+      <p>
+        赤帽はお客様からお預かりした品物を積み替えなしで全国各地へ配送いたします。<br>
+        配送は大至急で行い、数時間後には目的地まで輸送いたします。
+      </p>
+    </div>
+  </div>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">kitchen</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>チルド便</h3>
+      <div>
+        ドライアイスや蓄冷剤を入れた業務用の保冷ボックスを使用して配送いたします。<br>
+        夏季においても5℃〜8℃を保った状態で6時間〜8時間程度の輸送が可能です。
+      </div>
+    </div>
+  </div>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">schedule</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>定期便</h3>
+      <div>
+        定期的に特定の区間で輸送を行う業務も承っております。<br>
+        半日から月単位までの確定配送や、お客様繁忙期のみの定期便でもご利用いただけます。
+      </div>
+    </div>
+  </div>
+  <div class="plan" fxLayoutWrap fxLayoutGap="15px">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+      <mat-icon color="primary">flight_takeoff</mat-icon>
+    </div>
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>輸出便</h3>
+      <div>
+        海外に輸出する品物を国内の空港まで配送いたします。<br>
+        ただし、輸送する品物は輸出検査済みのものに限ります。
+      </div>
+    </div>
+  </div>
+  <span class="disclaimer">※1 4t、大型車を使用してのチャーターは夕方積み込み〜翌日午前着のみとなります</span>
+  <span class="disclaimer">※2 4t、大型車での輸送可能エリアには上限がございますので、事前に打ち合わせが必要となります</span>
+
+  <h2>料金</h2>
+  <p>上記いずれの利用ケースにおいても、移動距離に応じて料金を頂いております。</p>
+  <div fxLayoutWrap fxLayoutGap="15px">
+    <div fxFlex="calc(50% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>距離別輸送料金</h3>
+      <mat-table #table [dataSource]="feeData">
+        <ng-container matColumnDef="移動距離">
+          <mat-header-cell *matHeaderCellDef>移動距離</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="料金">
+          <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="feeColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: feeColumns;"></mat-row>
+      </mat-table>
+    </div>
+    <div fxFlex="calc(50% - 15px)" fxFlex.lt-md="calc(100%)">
+      <h3>県外へのチャーター配送の例</h3>
+      <mat-table #table [dataSource]="exampleData">
+        <ng-container matColumnDef="輸送先">
+          <mat-header-cell *matHeaderCellDef>輸送先</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="料金">
+          <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="exampleColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: exampleColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+  <span class="disclaimer">※1 上記の料金に加えて有料道路等の利用料金を別途頂戴します</span>
+
+  <h3>作業料金</h3>
+  <span>下記の作業が発生した場合には、別途作業料金を頂いております。</span>
+  <mat-table #table [dataSource]="workFeeData">
+    <ng-container matColumnDef="作業内容">
+      <mat-header-cell *matHeaderCellDef>作業内容</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="料金">
+      <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="workFeeColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: workFeeColumns;"></mat-row>
+  </mat-table>
+
+  <h3>その他諸料金</h3>
+  <mat-table #table [dataSource]="miscFeeData">
+    <ng-container matColumnDef="内容">
+      <mat-header-cell *matHeaderCellDef>内容</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="料金">
+      <mat-header-cell *matHeaderCellDef>料金</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.fee}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="miscFeeColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: miscFeeColumns;"></mat-row>
+  </mat-table>
+
+</div>

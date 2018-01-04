@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatCardModule, MatButtonModule, MatTabsModule, MatToolbarModule, MatIconModule,
-  MatGridListModule, MatChipsModule, MatSidenavModule, MatListModule, MatTableModule, MatCellDef, MatCell
+  MatGridListModule, MatChipsModule, MatSidenavModule, MatListModule, MatTableModule, MatMenuModule
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -24,6 +24,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatMenuModule
   ],
   exports: [
     HeaderComponent,
@@ -40,6 +41,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatMenuModule
   ],
   declarations: [
     HeaderComponent,

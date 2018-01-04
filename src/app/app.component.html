@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="container">
-  <nav mat-tab-nav-bar>
+  <nav fxHide.lt-sm="true" mat-tab-nav-bar>
     <a mat-tab-link
        *ngFor="let routeLink of routeLinks; let i = index"
        [routerLink]="routeLink.link"
@@ -12,3 +12,23 @@
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
+
+<div fxHide.gt-xs="true" fxShow.lt-sm="true">
+  <button class="fab" color="primary" mat-fab [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/">
+      <mat-icon>send</mat-icon>
+      <span>トップ</span>
+    </button>
+    <button mat-menu-item routerLink="/corporate">
+      <mat-icon>local_shipping</mat-icon>
+      <span>企業チャーター</span>
+    </button>
+    <button mat-menu-item routerLink="/individuals">
+      <mat-icon>home</mat-icon>
+      <span>引越し</span>
+    </button>
+  </mat-menu>
+</div>

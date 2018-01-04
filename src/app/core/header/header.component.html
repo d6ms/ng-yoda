@@ -1,24 +1,5 @@
 <div class="header">
 
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav class="side-nav" mode="side" [fixedInViewport]="true">
-      <mat-toolbar color="primary">
-        <mat-toolbar-row>
-          <div class="contact">
-            <span class="lead">お問い合わせは</span>
-            <span class="phone"><mat-icon>phone</mat-icon>090-8680-6788</span>
-          </div>
-        </mat-toolbar-row>
-      </mat-toolbar>
-      <mat-nav-list>
-        <mat-list-item><a matLine routerLink="">トップ</a></mat-list-item>
-        <mat-list-item><a matLine routerLink="/corporate">企業チャーター</a></mat-list-item>
-        <mat-list-item><a matLine routerLink="/individuals">引越し</a></mat-list-item>
-      </mat-nav-list>
-    </mat-sidenav>
-
-  </mat-sidenav-container>
-
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <div class="container">
@@ -26,14 +7,9 @@
           <h1>山梨 赤帽依田運送</h1>
         </div>
         <div fxFlex="1 1 auto"></div>
-        <div fxFlex fxHide.lt-md="true" class="contact">
+        <div fxFlex fxHide.lt-sm="true" class="contact">
           <span class="lead">お問い合わせは</span>
           <span class="phone"><mat-icon>phone</mat-icon>090-8680-6788</span>
-        </div>
-        <div fxFlex fxHide.gt-sm="true" fxShow.lt-md="true" class="nav-button">
-          <button type="button" mat-button (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
         </div>
       </div>
     </mat-toolbar-row>

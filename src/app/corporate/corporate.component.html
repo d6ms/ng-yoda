@@ -16,10 +16,10 @@
   </p>
 
   <div class="plan" fxLayoutWrap fxLayoutGap="15px">
-    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-sm="calc(100%)">
       <mat-icon color="primary">local_shipping</mat-icon>
     </div>
-    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>4t、大型車配送</h3>
       <p>
         通常の赤帽車では対応できないお荷物を輸送する場合でも、当社では対応が可能です。<br>
@@ -28,10 +28,10 @@
     </div>
   </div>
   <div class="plan" fxLayoutWrap fxLayoutGap="15px">
-    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-sm="calc(100%)">
       <mat-icon color="primary">report_problem</mat-icon>
     </div>
-    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>緊急便</h3>
       <p>
         赤帽はお客様からお預かりした品物を積み替えなしで全国各地へ配送いたします。<br>
@@ -40,10 +40,10 @@
     </div>
   </div>
   <div class="plan" fxLayoutWrap fxLayoutGap="15px">
-    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-sm="calc(100%)">
       <mat-icon color="primary">kitchen</mat-icon>
     </div>
-    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>チルド便</h3>
       <div>
         ドライアイスや蓄冷剤を入れた業務用の保冷ボックスを使用して配送いたします。<br>
@@ -52,10 +52,10 @@
     </div>
   </div>
   <div class="plan" fxLayoutWrap fxLayoutGap="15px">
-    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-sm="calc(100%)">
       <mat-icon color="primary">schedule</mat-icon>
     </div>
-    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>定期便</h3>
       <div>
         定期的に特定の区間で輸送を行う業務も承っております。<br>
@@ -64,10 +64,10 @@
     </div>
   </div>
   <div class="plan" fxLayoutWrap fxLayoutGap="15px">
-    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-icon" fxFlex="calc(20% - 15px)" fxFlex.lt-sm="calc(100%)">
       <mat-icon color="primary">flight_takeoff</mat-icon>
     </div>
-    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div class="plan-text" fxFlex="calc(80% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>輸出便</h3>
       <div>
         海外に輸出する品物を国内の空港まで配送いたします。<br>
@@ -81,7 +81,7 @@
   <h2>料金</h2>
   <p>上記いずれの利用ケースにおいても、移動距離に応じて料金を頂いております。</p>
   <div fxLayoutWrap fxLayoutGap="15px">
-    <div fxFlex="calc(50% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div fxFlex="calc(50% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>距離別輸送料金</h3>
       <mat-table #table [dataSource]="feeData">
         <ng-container matColumnDef="移動距離">
@@ -96,7 +96,7 @@
         <mat-row *matRowDef="let row; columns: feeColumns;"></mat-row>
       </mat-table>
     </div>
-    <div fxFlex="calc(50% - 15px)" fxFlex.lt-md="calc(100%)">
+    <div fxFlex="calc(50% - 15px)" fxFlex.lt-sm="calc(100%)">
       <h3>県外へのチャーター配送の例</h3>
       <mat-table #table [dataSource]="exampleData">
         <ng-container matColumnDef="輸送先">

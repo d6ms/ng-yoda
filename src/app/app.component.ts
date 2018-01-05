@@ -15,7 +15,8 @@ export class AppComponent {
     this.routeLinks = [
       { label: 'トップ', link: 'top' },
       { label: '企業チャーター', link: 'corporate' },
-      { label: '引越し', link: 'individuals' }
+      { label: '引越し', link: 'individuals' },
+      { label: 'お問い合わせ', link: 'contact' }
     ];
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {

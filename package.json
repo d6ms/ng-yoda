@@ -5,10 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod -aot",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "predeploy": "ng build -prod -aot",
+    "deploy": "node ./scripts/deploy.js"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +50,8 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "mime-types": "~2.1.17",
+    "aws-sdk": "~2.177.0"
   }
 }
